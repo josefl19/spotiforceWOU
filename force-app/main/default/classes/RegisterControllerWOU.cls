@@ -37,9 +37,9 @@ public with sharing class RegisterControllerWOU {
 
             //String userId = Site.createPortalUser(u, accountId, passwd);
             if(contId != null) {
-                //String emailResult = sendWelcomeMail(email);
+                String emailResult = sendWelcomeMail(email);
                 if (passwd != null && passwd.length() > 1 && email != null) {
-                    PageReference pageRef = ApexPages.currentPage();
+                    PageReference pageRef = new PageReference('https://wise-raccoon-kefkh5-dev-ed.preview.salesforce-communities.com/spotiforceWU/s/profile');
                     if(pageRef != null) return pageRef.getUrl();
                 }
                 else {

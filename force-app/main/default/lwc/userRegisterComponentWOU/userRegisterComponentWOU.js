@@ -5,9 +5,10 @@ import accountExist from '@salesforce/apex/RegisterControllerWOU.accountExist';
 import createUser from '@salesforce/apex/RegisterControllerWOU.createUser';
 
 // Imports de lightning
-import {ShowToastEvent} from 'lightning/platformShowToastEvent';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import { NavigationMixin } from 'lightning/navigation';
 
-export default class UserRegisterComponentWOU extends LightningElement {
+export default class UserRegisterComponentWOU extends NavigationMixin(LightningElement) {
     @track firstName;
     @track lastName;
     @track email;
@@ -71,13 +72,13 @@ export default class UserRegisterComponentWOU extends LightningElement {
                     createUser({firstName: this.firstName, lastName: this.lastName, email: this.email, phone: this.phone, passwd: this.passwd})
                     .then((result) => {
                         console.log('Entrada a then de createUser')
+                        console.log(result);
                         if(result){                         
                             console.log(result);
-                            navigateToUserPage();
+                            window.location.href = result;
                         }
                     }).catch((error) => {
                         console.log('Error en then')
-                        this.error = error;
                         console.log('error-', error.body);
 
                         if(error && error.body && error.body.message){
@@ -110,9 +111,9 @@ export default class UserRegisterComponentWOU extends LightningElement {
     navigateToUserPage() {
         console.log('Hola desde Navigate');
         this[NavigationMixin.Navigate]({
-            type: 'comm__namedPage',
+            type: 'standard__navItemPage',
             attributes: {
-                name: 'Home'
+                name: 'Profile__c'
             }
         });
     }
