@@ -11,29 +11,50 @@ public with sharing class RegisterControllerWOU {
     }
 
     @AuraEnabled
-    public static String createUser(String firstName, String lastName, String email, String phone, String passwd) {
+    public static String createUser(String firstName, String lastName, String email, String phone, String passwd, String tipo) {
         try {
             String accountId;
-            
+            ID contId;
+            String nombreAcc;
+            Boolean isArtist; 
+
+            if(tipo == 'User') {
+                isArtist = false;
+                nombreAcc = firstName + ' ' + lastName;
+             } else {
+                isArtist = true;
+                nombreAcc = lastName;
+             }
+
             Account acc = new Account();
-            acc.Name = firstName + ' ' + lastName;
+            acc.Name = nombreAcc;
             acc.Email__c = email;
             acc.Password__c = passwd;
             insert acc;
 
             ID acctId = acc.ID;
 
-			Id userType = Schema.SObjectType.Contact.getRecordTypeInfosByName().get('User').getRecordTypeId();
-            Contact con = new Contact(
+			Id userType = Schema.SObjectType.Contact.getRecordTypeInfosByName().get(tipo).getRecordTypeId();
+            if(isArtist) {
+                Contact con = new Contact(
+                LastName = lastName,
+                Email = email,
+                Phone = phone,
+                RecordTypeId = userType,
+            	AccountId = acctId);
+                insert con;
+                contId = con.ID;
+            } else {
+                Contact con = new Contact(
                 FirstName = firstName,
                 LastName = lastName,
                 Email = email,
                 Phone = phone,
                 RecordTypeId = userType,
             	AccountId = acctId);
-            insert con;
-
-            ID contId = con.ID;
+                insert con;
+                contId = con.ID;
+            }
 
             //String userId = Site.createPortalUser(u, accountId, passwd);
             if(contId != null) {
