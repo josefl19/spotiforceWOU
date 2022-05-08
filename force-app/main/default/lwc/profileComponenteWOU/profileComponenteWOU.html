@@ -1,3 +1,9 @@
 <template>
-    <c-renovate-suscription-component-w-o-u record-id={recordId}></c-renovate-suscription-component-w-o-u>
+    <p>Res: {userComp.data}</p>
+    <template if:true={userComp.data}>
+        <c-renovate-suscription-component-w-o-u record-id={recordId}></c-renovate-suscription-component-w-o-u>
+    </template>
+    <template if:false={userComp.data}>
+        
+    </template>
 </template>

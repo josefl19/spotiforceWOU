@@ -31,4 +31,22 @@ public with sharing class AccountControllerWOU {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled(cacheable = true)
+    public static Boolean isUser(String id){
+        try {
+            Boolean isUser;
+            Contact cont = [SELECT RecordType.Name FROM Contact WHERE AccountId=:id WITH SECURITY_ENFORCED LIMIT 1];
+            
+            if(cont.RecordType.Name == 'User') {
+                isUser = true;
+            } else {
+                isUser = false;
+            }
+
+            return isUser;
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
 }
