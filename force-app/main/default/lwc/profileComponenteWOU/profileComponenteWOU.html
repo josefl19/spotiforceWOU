@@ -4,6 +4,7 @@
         <c-renovate-suscription-component-w-o-u record-id={recordId}></c-renovate-suscription-component-w-o-u>
     </template>
     <template if:false={userComp.data}>
-        
+        <c-upload-album-component record-id={recordId}></c-upload-album-component>
+        <c-upload-song-component-w-o-u record-id={recordId}></c-upload-song-component-w-o-u>
     </template>
 </template>
