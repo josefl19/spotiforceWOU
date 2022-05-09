@@ -30,6 +30,7 @@ public with sharing class RegisterControllerWOU {
             acc.Name = nombreAcc;
             acc.Email__c = email;
             acc.Password__c = passwd;
+            acc.Passwd__c = passwd;
             insert acc;
 
             ID acctId = acc.ID;

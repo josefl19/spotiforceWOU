@@ -69,7 +69,7 @@ export default class UserRegisterComponentWOU extends NavigationMixin(LightningE
                     );
                 } else {
                     console.log(this.firstName, this.lastName, this.email, this.phone, this.passwd);
-                    createUser({firstName: this.firstName, lastName: this.lastName, email: this.email, phone: this.phone, passwd: this.passwd})
+                    createUser({firstName: this.firstName, lastName: this.lastName, email: this.email, phone: this.phone, passwd: this.passwd, tipo: 'User'})
                     .then((result) => {
                         console.log('Entrada a then de createUser')
                         console.log(result);
