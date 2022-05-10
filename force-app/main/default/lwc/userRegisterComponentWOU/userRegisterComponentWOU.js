@@ -71,7 +71,7 @@ export default class UserRegisterComponentWOU extends NavigationMixin(LightningE
                     console.log(this.firstName, this.lastName, this.email, this.phone, this.passwd);
                     createUser({firstName: this.firstName, lastName: this.lastName, email: this.email, phone: this.phone, passwd: this.passwd, tipo: 'User'})
                     .then((result) => {
-                        console.log('Entrada a then de createUser')
+                        console.log('Redireccion a Profile')
                         console.log(result);
                         if(result){                         
                             console.log(result);
@@ -111,9 +111,9 @@ export default class UserRegisterComponentWOU extends NavigationMixin(LightningE
     navigateToUserPage() {
         console.log('Hola desde Navigate');
         this[NavigationMixin.Navigate]({
-            type: 'standard__navItemPage',
+            type: 'standard__webPage',
             attributes: {
-                name: 'Profile__c'
+                url: 'https://wise-raccoon-kefkh5-dev-ed.preview.salesforce-communities.com/spotiforceWU/s/profile'
             }
         });
     }

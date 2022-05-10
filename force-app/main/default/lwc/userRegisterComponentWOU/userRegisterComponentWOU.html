@@ -12,8 +12,7 @@
                 <lightning-input type="email" label="Email" placeholder="Email..." name="email" value={email} onkeyup={handleEmailChange} pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" oninvalid={onEmailInvalid} required></lightning-input>
                 <lightning-input type="tel" label="Phone" placeholder="Phone..." name="phone" value={phone} onchange={handlePhoneChange} required></lightning-input>
                 <lightning-input type="password" label="Password" placeholder="Password..." name="password" value={password} onchange={handlePasswordChange} required></lightning-input>
-                    <span>Password must be Minimum eight characters, at least one letter, one number and one special character</span>
-                    <span>This field is required.</span>
+                    <span>Password must be minimum eight characters, at least one letter, one number and one special character.</span>
                 <lightning-input type="password" label="Confirm Password" placeholder="Confirm Password..." value={confirmPassword} name="confirm-password" onchange={handleConfirmPasswordChange} required></lightning-input>
                 <br>
                 <div class="slds-form-element" slot="footer">

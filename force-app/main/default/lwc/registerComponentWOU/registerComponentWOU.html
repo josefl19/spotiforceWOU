@@ -1,15 +1,19 @@
 <template>
+    <div class="slds-media__body">
+        <h2 class="slds-card__header-title">
+            <span>Choose a type of user</span>
+        </h2>
+    </div>
     <div>
         <lightning-radio-group 
             name="radioGroup"
-            label="Choose a type of user"
             options={options}
             value={value}
             onchange={handleChange}
-            type="radio"
-            required>
+            type="button" >
         </lightning-radio-group>
     </div>
+    <br>
     <div>
         <template if:true={userVal}>
             <c-user-register-component-w-o-u></c-user-register-component-w-o-u>

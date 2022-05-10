@@ -2,8 +2,6 @@ import { LightningElement, track } from 'lwc';
 
 export default class RegisterComponentWOU extends LightningElement {
     value = '';
-    @track userVal = false;
-    @track artistVal = false;
 
     get options() {
         return [
@@ -11,6 +9,9 @@ export default class RegisterComponentWOU extends LightningElement {
             { label: `I'm an Artist`, value: 'artist'},
         ];
     }
+
+    @track userVal = false;
+    @track artistVal = false;
 
     handleChange(event) {     
         this.value = event.detail.value;        
