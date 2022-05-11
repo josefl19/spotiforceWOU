@@ -1,0 +1,77 @@
+<template>
+    <lightning-card class="slds-card__body slds-card__body_inner">
+        <h1 class="slds-text-heading_medium">Complete the form</h1>
+        <p class="slds-text-body_regular">We get in touch as soon as possible.</p>
+        <div class="slds-form-element__control">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+                <input type=hidden name="orgid" value="00DIY000000B985">
+                <input type=hidden name="retURL" value="https://wise-raccoon-kefkh5-dev-ed.preview.salesforce-communities.com/spotiforceWU/s/profile">
+                <div class="slds-form-element slds-form-element_horizontal">
+                    <label class="slds-form-element__label" for="subject">Subject</label>
+                    <div class="slds-form-element__control">
+                        <input  id="subject" maxlength="80" name="subject" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+                <div class="slds-form-element slds-form-element_horizontal">
+                    <label class="slds-form-element__label" for="description">Description</label>
+                    <div class="slds-form-element__control">
+                        <textarea name="description" class="slds-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="slds-form-element slds-form-element_horizontal">
+                    <label class="slds-form-element__label" for="description">Origin</label>
+                    <div class="slds-form-element__control">
+                        <input  id="00NIY000000kk9s" maxlength="30" name="00NIY000000kk9s" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+                <div class="slds-form-element slds-form-element_horizontal">
+                    <label class="slds-form-element__label" for="type">Type</label>
+                    <div class="slds-form-element__control">
+                        <select  id="type" name="type" class="slds-input slds-combobox__input">
+                            <option value="">--None--</option>
+                            <option value="Mechanical">Mechanical</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Electronic">Electronic</option>
+                            <option value="Structural">Structural</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="slds-form-element slds-form-element_horizontal">
+                    <label class="slds-form-element__label" for="name">Contact Name</label>
+                    <div class="slds-form-element__control">
+                        <input  id="name" maxlength="80" name="name" size="20" type="text" class="slds-input" />
+                    </div>
+                </div>
+                <div class="slds-form-element slds-form-element_horizontal">
+                    <label class="slds-form-element__label" for="name">Comments</label>
+                    <div class="slds-form-element__control">
+                        <textarea  id="00NIY000000kkAW" name="00NIY000000kkAW" type="text" class="slds-textarea" ></textarea>
+                    </div>
+                </div>
+                <div class="slds-form-element slds-form-element_horizontal">
+                    <label class="slds-form-element__label" for="email">Email</label>
+                    <div class="slds-form-element__control">
+                        <input  id="email" maxlength="80" name="email" size="20" type="text" class="slds-input" />
+                    </div>
+                </div>
+                <div class="slds-form-element slds-form-element_horizontal">
+                    <label class="slds-form-element__label" for="email">Address</label>
+                    <div class="slds-form-element__control">
+                        <input  id="00NIY000000kkAg" maxlength="255" name="00NIY000000kkAg" size="20" type="text" class="slds-input" />
+                    </div>
+                </div>
+    
+                <!--  ----------------------------------------------------------------------  -->
+                <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+                <!--  these lines if you wish to test in debug mode.                          -->
+                <!--  <input type="hidden" name="debug" value=1>                              -->
+                <!--  <input type="hidden" name="debugEmail" value="jose.fl_@hotmail.com">    -->
+                <!--  ----------------------------------------------------------------------  -->
+    
+                <input type="hidden"  id="external" name="external" value="1" /><br>            
+                <input type="submit" name="submit" class="slds-button slds-button_success slds-align_absolute-center">
+            </form>
+        </div>
+    </lightning-card>
+</template>
