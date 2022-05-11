@@ -9,7 +9,7 @@
                 <div class="slds-form-element slds-form-element_horizontal">
                     <label class="slds-form-element__label" for="subject">Subject</label>
                     <div class="slds-form-element__control">
-                        <input  id="subject" maxlength="80" name="subject" size="20" type="text" class="slds-input"/>
+                        <input  id="subject" maxlength="80" name="subject" size="20" type="text" class="slds-input" placeholder="Origin"/>
                     </div>
                 </div>
                 <div class="slds-form-element slds-form-element_horizontal">
@@ -21,7 +21,7 @@
                 <div class="slds-form-element slds-form-element_horizontal">
                     <label class="slds-form-element__label" for="description">Origin</label>
                     <div class="slds-form-element__control">
-                        <input  id="00NIY000000kk9s" maxlength="30" name="00NIY000000kk9s" size="20" type="text" class="slds-input"/>
+                        <input  id="00NIY000000kk9s" maxlength="30" name="00NIY000000kk9s" size="20" type="text" class="slds-input" placeholder="Origin"/>
                     </div>
                 </div>
                 <div class="slds-form-element slds-form-element_horizontal">
@@ -40,7 +40,7 @@
                 <div class="slds-form-element slds-form-element_horizontal">
                     <label class="slds-form-element__label" for="name">Contact Name</label>
                     <div class="slds-form-element__control">
-                        <input  id="name" maxlength="80" name="name" size="20" type="text" class="slds-input" />
+                        <input  id="name" maxlength="80" name="name" size="20" type="text" class="slds-input" placeholder="First and Last Name"/>
                     </div>
                 </div>
                 <div class="slds-form-element slds-form-element_horizontal">
@@ -52,13 +52,13 @@
                 <div class="slds-form-element slds-form-element_horizontal">
                     <label class="slds-form-element__label" for="email">Email</label>
                     <div class="slds-form-element__control">
-                        <input  id="email" maxlength="80" name="email" size="20" type="text" class="slds-input" />
+                        <input  id="email" maxlength="80" name="email" size="20" type="text" class="slds-input" placeholder="Your email"/>
                     </div>
                 </div>
                 <div class="slds-form-element slds-form-element_horizontal">
                     <label class="slds-form-element__label" for="email">Address</label>
                     <div class="slds-form-element__control">
-                        <input  id="00NIY000000kkAg" maxlength="255" name="00NIY000000kkAg" size="20" type="text" class="slds-input" />
+                        <input  id="00NIY000000kkAg" maxlength="255" name="00NIY000000kkAg" size="20" type="text" class="slds-input" placeholder="Your address"/>
                     </div>
                 </div>
     
@@ -70,7 +70,7 @@
                 <!--  ----------------------------------------------------------------------  -->
     
                 <input type="hidden"  id="external" name="external" value="1" /><br>            
-                <input type="submit" name="submit" class="slds-button slds-button_success slds-align_absolute-center">
+                <input type="submit" name="submit" class="slds-button slds-button_success slds-align_absolute-center" onclick={handleClick}>
             </form>
         </div>
     </lightning-card>

@@ -60,7 +60,7 @@ public with sharing class RegisterControllerWOU {
 
             //String userId = Site.createPortalUser(u, accountId, passwd);
             if(contId != null) {
-                String emailResult = sendWelcomeMail(email);
+                String emailResult = sendWelcomeMail(email, acctId, contId);
                 if (passwd != null && passwd.length() > 1 && email != null) {
                     PageReference pageRef = new PageReference('https://wise-raccoon-kefkh5-dev-ed.preview.salesforce-communities.com/spotiforceWU/s/account/001IY000002OH1kYAG/edge-communications?app=commeditor');
                     if(pageRef != null) return pageRef.getUrl();
@@ -79,13 +79,18 @@ public with sharing class RegisterControllerWOU {
     }
 
     @AuraEnabled
-    public static String sendWelcomeMail(String email){
+    public static String sendWelcomeMail(String email, ID acctId, ID contId){
         try {
             String[] correos = new String[]{email} ;
             Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();         
             //mail.setSenderDisplayName(System.Label.Community_Email_Sender);
-            //mail.setTargetObjectId(userId);
-            //mail.setTemplateId(welcomeTemplate[0].Id);
+            mail.setTargetObjectId(contId);
+            mail.setSenderDisplayName('Spotiforce');
+
+            EmailTemplate emailTemplate = [SELECT Id,Subject,Description,HtmlValue,DeveloperName,Body FROM EmailTemplate WHERE Name = 'Welcome email'];
+
+            mail.setTemplateId(emailTemplate.Id);
+            mail.setWhatId(acctId);
             //mail.setSaveAsActivity(false);
             mail.setToAddresses(correos);
             mail.setSubject('Cuenta creada satisfactoriamente!');
