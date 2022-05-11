@@ -9,12 +9,14 @@ export default class UploadSongComponentWOU extends LightningElement {
     @api recordId;
     fields = [ALBUM_FIELD, SONGNAME_FIELD, DURATION_FIELD, ARTISTNAME_FIELD];
 
-    handleAccountCreated(event) {
+    handleSongCreated(event) {
         this.dispatchEvent(new ShowToastEvent({
                 title:'Success',
                 message: 'New song added successfully',
                 variant: 'success'
             })
         );
+
+        window.location.href = 'https://wise-raccoon-kefkh5-dev-ed.preview.salesforce-communities.com/spotiforceWU/s/account/001IY000002OH1kYAG/edge-communications?app=commeditor';
     }
 }

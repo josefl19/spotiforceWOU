@@ -35,5 +35,6 @@ export default class UploadAlbumComponent extends LightningElement {
                 variant: 'success'
             })
         );
+        window.location.href = 'https://wise-raccoon-kefkh5-dev-ed.preview.salesforce-communities.com/spotiforceWU/s/account/001IY000002OH1kYAG/edge-communications?app=commeditor';
     }
 }

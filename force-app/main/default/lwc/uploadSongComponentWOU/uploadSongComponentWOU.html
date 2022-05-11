@@ -1,7 +1,9 @@
 <template>
-    <lightning-record-form 
-        object-api-name='Song__c'
-        fields={fields}
-        onsuccess={handleAccountCreated}>
-    </lightning-record-form>
+    <lightning-card title="New song" icon-name="custom:custom81" class="slds-card__body slds-card__body_inner">
+        <lightning-record-form 
+            object-api-name='Song__c'
+            fields={fields}
+            onsuccess={handleSongCreated}>
+        </lightning-record-form>
+    </lightning-card>
 </template>

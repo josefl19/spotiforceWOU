@@ -6,7 +6,7 @@ public with sharing class AccountControllerWOU {
             accUpdate.Date_of_Purchase__c = System.today();
             update accUpdate;
 
-            PageReference pageRef = new PageReference('https://wise-raccoon-kefkh5-dev-ed.preview.salesforce-communities.com/spotiforceWU/s/profile');
+            PageReference pageRef = new PageReference('https://wise-raccoon-kefkh5-dev-ed.preview.salesforce-communities.com/spotiforceWU/s/account/001IY000002OH1kYAG/edge-communications?app=commeditor');
             return pageRef.getUrl();
 
         } catch (Exception e) {
